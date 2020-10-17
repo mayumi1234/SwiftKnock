@@ -28,7 +28,7 @@ class QuestionView: UIView {
         
         self.index = index
         configure()
-//        setup()
+        setup()
     }
     
     override init(frame: CGRect) {
@@ -54,35 +54,35 @@ class QuestionView: UIView {
         self.addSubview(view)
     }
     
-//    private func setup() {
-//        switch index {
-//        case 0:
-//            qestionTitleLabel.text = Struct.QestionTitle.for_in_1.rawValue
-//            answerLabel.text = Struct.Answer.for_in_1.rawValue
-//            statementLabel.isHidden = true
-//            questionTitleLabel2.isHidden = true
-//        case 1:
-//            qestionTitleLabel.text = Struct.QestionTitle.for_in_2.rawValue
-//            answerLabel.text = Struct.Answer.for_in_2.rawValue
-//            statementLabel.isHidden = true
-//            questionTitleLabel2.isHidden = true
-//            
-//        case 2:
-//            qestionTitleLabel.text = Struct.QestionTitle.for_in_3.rawValue
-//            statementLabel.text = Struct.ArrayState.for_in_3.rawValue
-//            answerLabel.text = Struct.Answer.for_in_3.rawValue
-//            statementLabel.isHidden = false
-//            questionTitleLabel2.isHidden = true
-//        case 3:
-//            qestionTitleLabel.text = Struct.QestionTitle.for_in_4.rawValue
-//            statementLabel.text = Struct.ArrayState.for_in_4.rawValue
-//            answerLabel.text = Struct.Answer.for_in_4.rawValue
-//            questionTitleLabel2.text = Struct.QestionTitle2.for_in_4.rawValue
-//            statementLabel.isHidden = false
-//            questionTitleLabel2.isHidden = true
-//        default:
-//            return
-//        }
-//    }
+    private func setup() {
+        switch index {
+        case 0:
+            qestionTitleLabel.text = Struct.QestionTitle.for_in_1.rawValue
+            answerLabel.text = Struct.Answer.for_in_1.rawValue
+            statementLabel.isHidden = true
+            questionTitleLabel2.isHidden = true
+        case 1:
+            qestionTitleLabel.text = Struct.QestionTitle.for_in_2.rawValue
+            answerLabel.text = Struct.Answer.for_in_2.rawValue
+            statementLabel.isHidden = true
+            questionTitleLabel2.isHidden = true
+            
+        case 2:
+            qestionTitleLabel.text = Struct.QestionTitle.for_in_3.rawValue
+            statementLabel.text = Struct.ArrayState.for_in_3.rawValue
+            answerLabel.text = Struct.Answer.for_in_3.rawValue
+            statementLabel.isHidden = false
+            questionTitleLabel2.isHidden = true
+        case 3:
+            qestionTitleLabel.text = Struct.QestionTitle.for_in_4.rawValue
+            statementLabel.text = Struct.ArrayState.for_in_4.rawValue
+            answerLabel.text = Struct.Answer.for_in_4.rawValue
+            questionTitleLabel2.text = Struct.QestionTitle2.for_in_4.rawValue
+            statementLabel.isHidden = false
+            questionTitleLabel2.isHidden = true
+        default:
+            return
+        }
+    }
 
 }

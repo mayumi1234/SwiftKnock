@@ -58,25 +58,25 @@ class QuestionViewController: UIViewController {
         
         switch index {
         case 0:
-            if questionView.textField.text == Struct.AnswerText.for_in_1.rawValue {
+            if questionView.textField!.text == Struct.AnswerText.for_in_1.rawValue {
                 HUD.flash(.labeledSuccess(title: "正解！", subtitle: ""), delay: TimeInterval(delayTime))
             } else {
                 HUD.flash(.labeledError(title: "不正解！", subtitle: ""), delay: TimeInterval(delayTime))
             }
         case 1:
-            if questionView.textField.text == Struct.AnswerText.for_in_2.rawValue {
+            if questionView.textField!.text == Struct.AnswerText.for_in_2.rawValue {
                 HUD.flash(.labeledSuccess(title: "正解！", subtitle: ""), delay: TimeInterval(delayTime))
             } else {
                 HUD.flash(.labeledError(title: "不正解！", subtitle: ""), delay: TimeInterval(delayTime))
             }
         case 2:
-            if questionView.textField.text == Struct.AnswerText.for_in_3.rawValue {
+            if questionView.textField!.text == Struct.AnswerText.for_in_3.rawValue {
                 HUD.flash(.labeledSuccess(title: "正解！", subtitle: ""), delay: TimeInterval(delayTime))
             } else {
                 HUD.flash(.labeledError(title: "不正解！", subtitle: ""), delay: TimeInterval(delayTime))
             }
         case 3:
-            if questionView.textField.text == Struct.AnswerText.for_in_4.rawValue {
+            if questionView.textField!.text == Struct.AnswerText.for_in_4.rawValue {
                 HUD.flash(.labeledSuccess(title: "正解！", subtitle: ""), delay: TimeInterval(delayTime))
             } else {
                 HUD.flash(.labeledError(title: "不正解！", subtitle: ""), delay: TimeInterval(delayTime))

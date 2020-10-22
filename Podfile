@@ -7,7 +7,8 @@ target 'SwiftKnockApp' do
 
   # Pods for SwiftKnockApp
   pod 'PKHUD'
-
+  pod 'SnapKit'
+  
   target 'SwiftKnockAppTests' do
     inherit! :search_paths
     # Pods for testing

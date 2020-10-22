@@ -8,70 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="SwiftKnockApp" customModuleProvider="target">
-            <connections>
-                <outlet property="answerLabel" destination="fSV-qO-Dig" id="S6b-VN-ICJ"/>
-                <outlet property="qestionTitleLabel" destination="536-mk-bT1" id="uyg-zY-LU4"/>
-                <outlet property="questionTitleLabel2" destination="Kbi-id-mLf" id="olU-3l-IoI"/>
-                <outlet property="statementLabel" destination="KBl-CN-oq7" id="c13-Ob-zaX"/>
-                <outlet property="textField" destination="q0E-Qh-NDP" id="lwF-5P-WPH"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="SwiftKnockApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="L0N-ZB-rfD">
-            <rect key="frame" x="0.0" y="0.0" width="403" height="184"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PpA-v3-fLE">
-                    <rect key="frame" x="0.0" y="0.0" width="403" height="184"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSV-qO-Dig">
-                            <rect key="frame" x="0.0" y="0.0" width="403" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="536-mk-bT1">
-                            <rect key="frame" x="0.0" y="20.5" width="403" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbi-id-mLf">
-                            <rect key="frame" x="0.0" y="41" width="403" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0E-Qh-NDP">
-                            <rect key="frame" x="0.0" y="61.5" width="403" height="102"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBl-CN-oq7">
-                            <rect key="frame" x="0.0" y="163.5" width="403" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
-            </subviews>
-            <viewLayoutGuide key="safeArea" id="Fl5-xb-PAs"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="PpA-v3-fLE" firstAttribute="top" secondItem="L0N-ZB-rfD" secondAttribute="top" id="2iz-wI-gtl"/>
-                <constraint firstItem="PpA-v3-fLE" firstAttribute="trailing" secondItem="Fl5-xb-PAs" secondAttribute="trailing" id="NeC-0f-oWW"/>
-                <constraint firstItem="PpA-v3-fLE" firstAttribute="leading" secondItem="Fl5-xb-PAs" secondAttribute="leading" id="SgR-ii-0gm"/>
-                <constraint firstItem="PpA-v3-fLE" firstAttribute="bottom" secondItem="Fl5-xb-PAs" secondAttribute="bottom" id="pwI-Sd-ceH"/>
-            </constraints>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="325"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemGreenColor"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="103.62318840579711" y="-116.51785714285714"/>
+            <point key="canvasLocation" x="-163.768115942029" y="-115.51339285714285"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

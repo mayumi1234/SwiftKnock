@@ -2,22 +2,24 @@
 //  QuestionView.swift
 //  SwiftKnockApp
 //
-//  Created by m.yamanishi on 2020/10/11.
+//  Created by m.yamanishi on 2020/10/20.
 //
 
 import UIKit
+import SnapKit
 
 protocol QuestionViewDelegate: class {
     func tappedSubmitButton(text: String)
 }
-    
+
 class QuestionView: UIView {
     
-    @IBOutlet weak var qestionTitleLabel: UILabel!
-    @IBOutlet weak var questionTitleLabel2: UILabel!
-    @IBOutlet weak var statementLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var answerLabel: UILabel!
+    let stackView: UIStackView? = UIStackView()
+    let questionTitleLabel: UILabel? = UILabel()
+    let questionTitleLabel2: UILabel? = UILabel()
+    let statementLabel: UILabel? = UILabel()
+    let textField: UITextField? = UITextField()
+    let answerLabel: UILabel? = UILabel()
     
     weak var delegate: QuestionViewDelegate?
     
@@ -42,44 +44,73 @@ class QuestionView: UIView {
         
         configure()
     }
-
+    
     private func configure() {
-//        let nib = UINib(nibName: "QuestionView", bundle: nil)
-//        guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
-//        view.frame = self.bounds
-//        self.addSubview(view)
-        
         let view = Bundle.main.loadNibNamed("QuestionView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
     }
     
     private func setup() {
+        guard let view = Bundle(for: type(of: self)).loadNibNamed(String(describing: type(of: self)), owner: nil, options: nil)?.first as? UIView else { return }
+        
+        view.addSubview(stackView!)
+        stackView!.addSubview(questionTitleLabel!)
+        stackView!.addSubview(questionTitleLabel2!)
+        stackView!.addSubview(statementLabel!)
+        stackView!.addSubview(textField!)
+        stackView!.addSubview(answerLabel!)
+        
+        view.snp.makeConstraints { make in
+            make.width.equalTo(403)
+            make.height.equalTo(184)
+        }
+        stackView!.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview()
+            make.edges.equalToSuperview()
+        }
+        
+        view.backgroundColor = .white
+        stackView!.backgroundColor = .white
+        stackView!.axis = .vertical
+        stackView!.alignment = .fill
+        stackView!.distribution = .fill
+        [
+            questionTitleLabel,
+            questionTitleLabel2,
+            statementLabel,
+            textField,
+            answerLabel
+        ].forEach {
+            $0!.backgroundColor = .white
+        }
+        
         switch index {
         case 0:
-            qestionTitleLabel.text = Struct.QestionTitle.for_in_1.rawValue
-            answerLabel.text = Struct.Answer.for_in_1.rawValue
-            statementLabel.isHidden = true
-            questionTitleLabel2.isHidden = true
+            questionTitleLabel!.text = Struct.QestionTitle.for_in_1.rawValue
+            answerLabel!.text = Struct.Answer.for_in_1.rawValue
+            statementLabel!.isHidden = true
+            questionTitleLabel2!.isHidden = true
         case 1:
-            qestionTitleLabel.text = Struct.QestionTitle.for_in_2.rawValue
-            answerLabel.text = Struct.Answer.for_in_2.rawValue
-            statementLabel.isHidden = true
-            questionTitleLabel2.isHidden = true
+            questionTitleLabel!.text = Struct.QestionTitle.for_in_2.rawValue
+            answerLabel!.text = Struct.Answer.for_in_2.rawValue
+            statementLabel!.isHidden = true
+            questionTitleLabel2!.isHidden = true
             
         case 2:
-            qestionTitleLabel.text = Struct.QestionTitle.for_in_3.rawValue
-            statementLabel.text = Struct.ArrayState.for_in_3.rawValue
-            answerLabel.text = Struct.Answer.for_in_3.rawValue
-            statementLabel.isHidden = false
-            questionTitleLabel2.isHidden = true
+            questionTitleLabel!.text = Struct.QestionTitle.for_in_3.rawValue
+            statementLabel!.text = Struct.ArrayState.for_in_3.rawValue
+            answerLabel!.text = Struct.Answer.for_in_3.rawValue
+            statementLabel!.isHidden = false
+            questionTitleLabel2!.isHidden = true
         case 3:
-            qestionTitleLabel.text = Struct.QestionTitle.for_in_4.rawValue
-            statementLabel.text = Struct.ArrayState.for_in_4.rawValue
-            answerLabel.text = Struct.Answer.for_in_4.rawValue
-            questionTitleLabel2.text = Struct.QestionTitle2.for_in_4.rawValue
-            statementLabel.isHidden = false
-            questionTitleLabel2.isHidden = true
+            questionTitleLabel!.text = Struct.QestionTitle.for_in_4.rawValue
+            statementLabel!.text = Struct.ArrayState.for_in_4.rawValue
+            answerLabel!.text = Struct.Answer.for_in_4.rawValue
+            questionTitleLabel2!.text = Struct.QestionTitle2.for_in_4.rawValue
+            statementLabel!.isHidden = false
+            questionTitleLabel2!.isHidden = true
         default:
             return
         }

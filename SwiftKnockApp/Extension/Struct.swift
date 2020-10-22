@@ -30,7 +30,11 @@ class Struct: NSObject {
     }
     
     enum Format: String {
-        case for_in_1 = "for 変数 in 開始値 ..< 終了値 {\n// ステートメント\n}"
+        case for_in_1 = """
+                        for 変数 in 開始値 ..< 終了値 {
+                            // ステートメント
+                        }
+                        """
         case for_in_2 = "for 変数 in 開始値 ... 終了値 {\n// ステートメント\n}"
         case for_in_3 = "for 変数 in コレクション {\n// ステートメント\n}"
     }

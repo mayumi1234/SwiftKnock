@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4CA9B7AE7DD6C793C0755A78 /* Pods_SwiftKnockApp_SwiftKnockAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85019AC1B2D484D1176787B4 /* Pods_SwiftKnockApp_SwiftKnockAppUITests.framework */; };
 		9918600866DFC07A9A5E873A /* Pods_SwiftKnockApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFDB5E08AA707FAB80AE619 /* Pods_SwiftKnockApp.framework */; };
+		9E1E3B66253EDF82004174D5 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E1E3B65253EDF82004174D5 /* QuestionView.xib */; };
+		9E1E3B6B253EDFA0004174D5 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1E3B6A253EDFA0004174D5 /* QuestionView.swift */; };
 		9E32B22F2532B32200045EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B22E2532B32200045EB1 /* AppDelegate.swift */; };
 		9E32B2312532B32200045EB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B2302532B32200045EB1 /* SceneDelegate.swift */; };
 		9E32B2332532B32200045EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B2322532B32200045EB1 /* ViewController.swift */; };
@@ -25,8 +27,6 @@
 		9EEE79FA2532D5010095A06A /* QuestionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EEE79F92532D5010095A06A /* QuestionView.storyboard */; };
 		9EEE79FF2532D5130095A06A /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE79FE2532D5130095A06A /* QuestionViewController.swift */; };
 		9EEE7A052532E4430095A06A /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE7A042532E4430095A06A /* Struct.swift */; };
-		9EEE7A16253316E50095A06A /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EEE7A15253316E50095A06A /* QuestionView.xib */; };
-		9EEE7A1B253318170095A06A /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE7A1A253318170095A06A /* QuestionView.swift */; };
 		BE9965462A631E72C3B8BF9E /* Pods_SwiftKnockAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790546492756FD85848A50F9 /* Pods_SwiftKnockAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +56,8 @@
 		790546492756FD85848A50F9 /* Pods_SwiftKnockAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftKnockAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D85EBB05688C00DF2CC1D53 /* Pods-SwiftKnockApp-SwiftKnockAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKnockApp-SwiftKnockAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftKnockApp-SwiftKnockAppUITests/Pods-SwiftKnockApp-SwiftKnockAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		85019AC1B2D484D1176787B4 /* Pods_SwiftKnockApp_SwiftKnockAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftKnockApp_SwiftKnockAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E1E3B65253EDF82004174D5 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		9E1E3B6A253EDFA0004174D5 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		9E32B22B2532B32200045EB1 /* SwiftKnockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftKnockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E32B22E2532B32200045EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E32B2302532B32200045EB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		9EEE79F92532D5010095A06A /* QuestionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionView.storyboard; sourceTree = "<group>"; };
 		9EEE79FE2532D5130095A06A /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9EEE7A042532E4430095A06A /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
-		9EEE7A15253316E50095A06A /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
-		9EEE7A1A253318170095A06A /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		F1CB73D4402A9A0744E500EB /* Pods-SwiftKnockAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKnockAppTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftKnockAppTests/Pods-SwiftKnockAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,8 +217,8 @@
 		9EEE7A14253316CE0095A06A /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				9EEE7A15253316E50095A06A /* QuestionView.xib */,
-				9EEE7A1A253318170095A06A /* QuestionView.swift */,
+				9E1E3B65253EDF82004174D5 /* QuestionView.xib */,
+				9E1E3B6A253EDFA0004174D5 /* QuestionView.swift */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 			files = (
 				9EEE79C62532B9A30095A06A /* SecondTableView.storyboard in Resources */,
 				9E32B23E2532B32300045EB1 /* LaunchScreen.storyboard in Resources */,
-				9EEE7A16253316E50095A06A /* QuestionView.xib in Resources */,
+				9E1E3B66253EDF82004174D5 /* QuestionView.xib in Resources */,
 				9E32B23B2532B32300045EB1 /* Assets.xcassets in Resources */,
 				9EEE79FA2532D5010095A06A /* QuestionView.storyboard in Resources */,
 				9E32B2362532B32200045EB1 /* Main.storyboard in Resources */,
@@ -495,7 +495,7 @@
 				9EEE7A052532E4430095A06A /* Struct.swift in Sources */,
 				9E32B2392532B32200045EB1 /* SwiftKnockApp.xcdatamodeld in Sources */,
 				9E32B2312532B32200045EB1 /* SceneDelegate.swift in Sources */,
-				9EEE7A1B253318170095A06A /* QuestionView.swift in Sources */,
+				9E1E3B6B253EDFA0004174D5 /* QuestionView.swift in Sources */,
 				9EEE79F42532C1FC0095A06A /* ThirdTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

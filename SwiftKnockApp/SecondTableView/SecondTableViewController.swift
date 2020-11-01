@@ -21,8 +21,8 @@ class SecondTableViewController: UIViewController {
         
         self.navigationItem.title = titleString
         
-        for second in Struct.Second.allCases {
-            secondArray.append(second.rawValue)
+        for index in Struct.repeatFomartCollection.allCases {
+            secondArray.append(index.rawValue)
         }
     }
 
@@ -41,10 +41,18 @@ extension SecondTableViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
-        vc.titleString = secondArray[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        if indexPath.row == 0 { //　for文
+            let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
+            vc.titleString = secondArray[indexPath.row]
+            vc.index = indexPath.row
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 1 { // while文
+            let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
+            vc.titleString = secondArray[indexPath.row]
+            vc.index = indexPath.row
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
 }

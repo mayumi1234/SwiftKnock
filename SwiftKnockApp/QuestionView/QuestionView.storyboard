@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7ZY-wD-YBz">
-                                <rect key="frame" x="10" y="98" width="394" height="241.5"/>
+                                <rect key="frame" x="10" y="98" width="394" height="228"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="書式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oR-wR-VRh">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
@@ -76,18 +76,17 @@
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdS-dF-Ir7" customClass="QuestionView" customModule="SwiftKnockApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="141.5" width="394" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="s9E-iY-KxX"/>
-                                        </constraints>
+                                    <view contentMode="scaleToFill" id="zdS-dF-Ir7" customClass="QuestionView" customModule="SwiftKnockApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="142" width="394" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooz-ue-pn6">
-                                <rect key="frame" x="57" y="389.5" width="300" height="30"/>
+                                <rect key="frame" x="57" y="336" width="300" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Q3a-ms-eH3"/>
                                     <constraint firstAttribute="width" constant="300" id="QrS-aA-tbl"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,15 +101,15 @@
                         <constraints>
                             <constraint firstItem="7ZY-wD-YBz" firstAttribute="top" secondItem="8vo-IX-p9S" secondAttribute="top" constant="10" id="2qO-yx-SOF"/>
                             <constraint firstItem="7ZY-wD-YBz" firstAttribute="leading" secondItem="8vo-IX-p9S" secondAttribute="leading" constant="10" id="8z7-Dc-an2"/>
-                            <constraint firstItem="Ooz-ue-pn6" firstAttribute="top" secondItem="7ZY-wD-YBz" secondAttribute="bottom" constant="50" id="v2P-Fe-20c"/>
+                            <constraint firstItem="Ooz-ue-pn6" firstAttribute="top" secondItem="7ZY-wD-YBz" secondAttribute="bottom" constant="10" id="aOq-HT-r0M"/>
                             <constraint firstItem="Ooz-ue-pn6" firstAttribute="centerX" secondItem="ozQ-OO-SHm" secondAttribute="centerX" id="waC-hY-gT4"/>
                             <constraint firstItem="8vo-IX-p9S" firstAttribute="trailing" secondItem="7ZY-wD-YBz" secondAttribute="trailing" constant="10" id="yqJ-V2-h02"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Rt-Zd-ma2"/>
                     <connections>
-                        <outlet property="addQuestionView" destination="zdS-dF-Ir7" id="AGg-iD-5is"/>
                         <outlet property="formatLabel" destination="N7b-qh-Tbz" id="La5-LE-e3m"/>
+                        <outlet property="questionView" destination="zdS-dF-Ir7" id="STf-ED-MDH"/>
                         <outlet property="smallRedLabel" destination="0I1-BP-mL3" id="8e0-SI-5Hf"/>
                         <outlet property="submitButton" destination="Ooz-ue-pn6" id="qGg-Pt-z4O"/>
                     </connections>

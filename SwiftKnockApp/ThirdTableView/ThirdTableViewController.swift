@@ -13,6 +13,7 @@ class ThirdTableViewController: UIViewController {
     
     var thirdArray = [String]()
     var titleString: String?
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,14 @@ class ThirdTableViewController: UIViewController {
         
         self.navigationItem.title = titleString
         
-        for third in Struct.Third.allCases {
-            thirdArray.append(third.rawValue)
+        if index == 0 {
+            for index in Struct.forCollection_1.allCases {
+                thirdArray.append(index.rawValue)
+            }
+        } else if index == 1 {
+            for index in Struct.whileCollection.allCases {
+                thirdArray.append(index.rawValue)
+            }
         }
     }
 
@@ -42,11 +49,25 @@ extension ThirdTableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "QuestionView", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
-        vc.index = indexPath.row
-        vc.titleString = thirdArray[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        // forのとき
+        if titleString == "for-in文" {
+            if indexPath.row == 2 { // for コレクション
+                let storyboard = UIStoryboard.init(name: "FourthTableView", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "FourthTableViewController") as! FourthTableViewController
+                vc.titleString = thirdArray[indexPath.row]
+                navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let storyboard = UIStoryboard.init(name: "QuestionView", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+                vc.titleString = thirdArray[indexPath.row]
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            let storyboard = UIStoryboard.init(name: "QuestionView", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+            vc.titleString = thirdArray[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

@@ -322,4 +322,34 @@ class Struct: NSObject {
         case not_correct = "不正解！"
     }
 
+    enum arrayTitleString: String, CaseIterable {
+        case array_1 = "Struct.forCollection_1.for_in_1.rawValue"
+        case array_2 = "Struct.forCollection_1.for_in_2.rawValue"
+        case array_3 = "Struct.forCollection_2.for_in_3.rawValue"
+        case array_4 = "Struct.forCollection_2.for_in_4.rawValue"
+        case array_5 = "Struct.forCollection_2.for_in_5.rawValue"
+        case array_6 = "Struct.forCollection_2.for_in_6.rawValue"
+        case array_7 = "Struct.forCollection_2.for_in_7.rawValue"
+        case array_8 = "Struct.forCollection_1.for_in_4.rawValue"
+        case array_9 = "Struct.whileCollection.while_1.rawValue"
+        case array_10 = "Struct.whileCollection.while_2.rawValue"
+        case array_11 = "Struct.deferFomartCollection.defer_1.rawValue"
+        case array_12 = "Struct.deferFomartCollection.defer_2.rawValue"
+    }
+    
+    enum arrayAnswerString: String, CaseIterable {
+        case array_1 = "Struct.AnswerText.for_in_1.rawValue"
+        case array_2 = "Struct.AnswerText.for_in_2.rawValue"
+        case array_3 = "Struct.AnswerText.for_in_3.rawValue"
+        case array_4 = "Struct.AnswerText.for_in_4.rawValue"
+        case array_5 = "Struct.AnswerText.for_in_5.rawValue"
+        case array_6 = "Struct.AnswerText.for_in_6.rawValue"
+        case array_7 = "Struct.AnswerText.for_in_7.rawValue"
+        case array_8 = "Struct.AnswerText.for_in_8.rawValue"
+        case array_9 = "Struct.AnswerText.while_1.rawValue"
+        case array_10 = "Struct.AnswerText.while_2.rawValue"
+        case array_11 = "Struct.AnswerText.defer_1.rawValue"
+        case array_12 = "Struct.AnswerText.defer_2.rawValue"
+    }
+    
 }

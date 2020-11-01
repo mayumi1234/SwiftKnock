@@ -50,7 +50,7 @@ extension ThirdTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // forのとき
-        if titleString == "for-in文" {
+        if titleString == Struct.repeatFomartCollection.for_in_1.rawValue {
             if indexPath.row == 2 { // for コレクション
                 let storyboard = UIStoryboard.init(name: "FourthTableView", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "FourthTableViewController") as! FourthTableViewController

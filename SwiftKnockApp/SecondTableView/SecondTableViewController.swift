@@ -22,11 +22,11 @@ class SecondTableViewController: UIViewController {
         self.navigationItem.title = titleString
         
         switch titleString {
-        case "繰り返し処理（for-in、while、repeat-while）":
+        case Struct.First.for_in_1.rawValue:
             for index in Struct.repeatFomartCollection.allCases {
                 secondArray.append(index.rawValue)
             }
-        case "defer文":
+        case Struct.First.defer_sentence.rawValue:
             for index in Struct.deferFomartCollection.allCases {
                 secondArray.append(index.rawValue)
             }
@@ -51,13 +51,13 @@ extension SecondTableViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch titleString {
-        case "繰り返し処理（for-in、while、repeat-while）":
+        case Struct.First.for_in_1.rawValue:
             let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
             vc.titleString = secondArray[indexPath.row]
             vc.index = indexPath.row
             navigationController?.pushViewController(vc, animated: true)
-        case "defer文":
+        case Struct.First.defer_sentence.rawValue:
             let storyboard = UIStoryboard.init(name: "QuestionView", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
             vc.titleString = secondArray[indexPath.row]

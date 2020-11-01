@@ -22,9 +22,15 @@ class FourthTableViewController: UIViewController {
         
         self.navigationItem.title = titleString
         
-        for index in Struct.forCollection_2.allCases {
-            fourthArray.append(index.rawValue)
+        switch titleString {
+        case Struct.forCollection_1.for_in_3.rawValue:
+            for index in Struct.forCollection_2.allCases {
+                fourthArray.append(index.rawValue)
+            }
+        default:
+            return
         }
+        
     }
 
 }

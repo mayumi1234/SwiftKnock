@@ -31,6 +31,7 @@ class Struct: NSObject {
     enum First: String, CaseIterable {
         case for_in_1 = "繰り返し処理（for-in、while、repeat-while）"
         case defer_sentence = "defer文"
+        case generics = "ジェネリクス（関数、クラス）"
     }
     
     enum repeatFomartCollection: String, CaseIterable {
@@ -41,6 +42,26 @@ class Struct: NSObject {
     enum deferFomartCollection: String, CaseIterable {
         case defer_1 = "単体のdefer文"
         case defer_2 = "複数のdefer文"
+        case defer_3 = "注意点"
+    }
+    
+    enum genericsFomartCollection: String, CaseIterable {
+        case generics_1 = "ジェネリック関数"
+        case generics_2 = "ジェネリッククラス"
+    }
+    
+    enum genericsFuncCollection: String, CaseIterable {
+        case generics_1 = "Int(ジェネリック関数)"
+        case generics_2 = "Double(ジェネリック関数)"
+        case generics_3 = "String(ジェネリック関数)"
+        case generics_4 = "Boolean(ジェネリック関数)"
+    }
+    
+    enum genericsClassCollection: String, CaseIterable {
+        case generics_1 = "Int(ジェネリッククラス)"
+        case generics_2 = "Double(ジェネリッククラス)"
+        case generics_3 = "String(ジェネリッククラス)"
+        case generics_4 = "Boolean(ジェネリッククラス)"
     }
     
     enum forCollection_1: String, CaseIterable {
@@ -98,6 +119,19 @@ class Struct: NSObject {
                         スコープを抜ける際に実行したい処理を定義する。
                         複数のdefer文を記述した場合は逆順で実行される。
                        """
+        case defer_3 = """
+                        あくまでdeferは処理をスコープが終わるまで待つというものであり、deferが待ち始める前にbreakやreturnなどでスコープを抜けてしまうと実行されない。
+                       """
+        case generics_1 = """
+                            func 関数名<T>(引数名: 型) -> 戻り値の型 {
+                              // 処理
+                            }
+                          """
+        case generics_2 = """
+                          class クラス名<T> {
+                            // 処理
+                          }
+                          """
     }
 
     enum QestionTitle: String {
@@ -287,6 +321,71 @@ class Struct: NSObject {
                         // defer文実行_2
                         // defer文実行_1
                        """
+        case defer_3 = """
+                        func deferTest(param: String) {
+
+                            if param == "blue" {
+                                print("スコープを抜けます")
+                                return
+                            }
+                            defer {
+                                print("defer文実行")
+                            }
+                        }
+                        deferTest(param: "blue")
+
+                        // 【結果】
+                        // ここに入る回答を選んでください。
+                       """
+        case generics_1 = """
+                            func testGenerics<T> (param1: T, param2: T) -> (T, T) {
+                                return (param1, param2)
+                            }
+                          """
+        case generics_2 = """
+                          class Test<T> {
+                              var data: T
+
+                              init(data: T) {
+                                  self.data = data
+                              }
+                          }
+                          """
+    }
+    
+    enum genericsSourceCode: String {
+        case generics_1 = """
+                            // Int型
+                            // ここに入る回答を下から選んでみよう。
+                            // 型の確認
+                            print(type(of: resultInt.data)) // 結果: Int
+                            // 値の確認
+                            print(resultInt.data) // 結果: 10
+                           """
+        case generics_2 = """
+                            // Double型
+                            // ここに入る回答を下から選んでみよう。
+                            // 型の確認
+                            print(type(of: resultDouble.data)) // 結果: Double
+                            // 値の確認
+                            print(resultDouble.data) // 結果: 1.0
+                          """
+        case generics_3 = """
+                            // String型
+                            // ここに入る回答を下から選んでみよう。
+                            // 型の確認
+                            print(type(of: resultString.data)) // 結果: String
+                            // 値の確認
+                            print(resultString.data) // 結果: Hello
+                          """
+        case generics_4 = """
+                            // Boolean型
+                            // ここに入る回答を下から選んでみよう。
+                            // 型の確認
+                            print(type(of: resultBoolean.data)) // 結果: Boolean
+                            // 値の確認
+                            print(resultBoolean.data) // 結果: true
+                          """
     }
     
     enum deferAnswerText: String {
@@ -300,6 +399,57 @@ class Struct: NSObject {
                         (B) defer { print("defer文実行_3") }
                         (C) defer { print("defer文実行_2") }
                        """
+        case defer_3 = """
+                        (A) スコープを抜けます
+                            defer文実行
+                        (B) defer文実行
+                            スコープを抜けます
+                        (C) スコープを抜けます
+                       """
+    }
+    
+    enum genericsAnswerText: String {
+        case genercs_1 = """
+                         (A) let resultInt = testGenerics(param1: 1, param2: 2)
+                         (B) let resultInt = testGenerics(param1: 1.0, param2: 2.0)
+                         (C) let resultInt = testGenerics(param1: true, param2: false)
+                         """
+        case genercs_2 = """
+                         (A) let resultDouble = testGenerics(param1: 1, param2: 2)
+                         (B) let resultDouble = testGenerics(param1: 1.0, param2: 2.0)
+                         (C) let resultDouble = testGenerics(param1: true, param2: false)
+                         """
+        case genercs_3 = """
+                         (A) let resultString = testGenerics(param1: 1, param2: 2)
+                         (B) let resultString = testGenerics(param1: 1.0, param2: 2.0)
+                         (C) let resultString = testGenerics(param1: "1", param2: "2")
+                         """
+        case genercs_4 = """
+                         (A) let resultBool = testGenerics(param1: true, param2: false)
+                         (B) let resultBool = testGenerics(param1: 1.0, param2: 2.0)
+                         (C) let resultBool = testGenerics(param1: "1", param2: "2")
+                         """
+        case genercs_5 = """
+                         (A) let resultInt = Test(data: 10.0)
+                         (B) let resultInt = Test(data: 10)
+                         (C) let resultInt = Test(data: true)
+                         """
+        case genercs_6 = """
+                         (A) let resultDouble = Test(data: 1)
+                         (B) let resultDouble = Test(data: true)
+                         (C) let resultDouble = Test(data: 1.0)
+                         """
+        case genercs_7 = """
+                         (A) let resultString = Test(data: "Hello")
+                         (B) let resultString = Test(data: true)
+                         (C) let resultString = Test(data: 1.0)
+                         """
+        case genercs_8 = """
+                         (A) let resultBoolean = Test(data: 10)
+                         (B) let resultBoolean = Test(data: true)
+                         (C) let resultBoolean = Test(data: 1.0)
+                         """
+        
     }
 
     enum AnswerText: String {
@@ -313,8 +463,9 @@ class Struct: NSObject {
         case for_in_8 = "for num in stride(from: 10, to: 50, by: 3)"
         case while_1 = "while count < 5"
         case while_2 = "repeat"
-        case defer_1 = "A"
-        case defer_2 = "B"
+        case A = "A"
+        case B = "B"
+        case C = "C"
     }
     
     enum correctOrNotcorrect: String {
@@ -322,34 +473,4 @@ class Struct: NSObject {
         case not_correct = "不正解！"
     }
 
-    enum arrayTitleString: String, CaseIterable {
-        case array_1 = "Struct.forCollection_1.for_in_1.rawValue"
-        case array_2 = "Struct.forCollection_1.for_in_2.rawValue"
-        case array_3 = "Struct.forCollection_2.for_in_3.rawValue"
-        case array_4 = "Struct.forCollection_2.for_in_4.rawValue"
-        case array_5 = "Struct.forCollection_2.for_in_5.rawValue"
-        case array_6 = "Struct.forCollection_2.for_in_6.rawValue"
-        case array_7 = "Struct.forCollection_2.for_in_7.rawValue"
-        case array_8 = "Struct.forCollection_1.for_in_4.rawValue"
-        case array_9 = "Struct.whileCollection.while_1.rawValue"
-        case array_10 = "Struct.whileCollection.while_2.rawValue"
-        case array_11 = "Struct.deferFomartCollection.defer_1.rawValue"
-        case array_12 = "Struct.deferFomartCollection.defer_2.rawValue"
-    }
-    
-    enum arrayAnswerString: String, CaseIterable {
-        case array_1 = "Struct.AnswerText.for_in_1.rawValue"
-        case array_2 = "Struct.AnswerText.for_in_2.rawValue"
-        case array_3 = "Struct.AnswerText.for_in_3.rawValue"
-        case array_4 = "Struct.AnswerText.for_in_4.rawValue"
-        case array_5 = "Struct.AnswerText.for_in_5.rawValue"
-        case array_6 = "Struct.AnswerText.for_in_6.rawValue"
-        case array_7 = "Struct.AnswerText.for_in_7.rawValue"
-        case array_8 = "Struct.AnswerText.for_in_8.rawValue"
-        case array_9 = "Struct.AnswerText.while_1.rawValue"
-        case array_10 = "Struct.AnswerText.while_2.rawValue"
-        case array_11 = "Struct.AnswerText.defer_1.rawValue"
-        case array_12 = "Struct.AnswerText.defer_2.rawValue"
-    }
-    
 }

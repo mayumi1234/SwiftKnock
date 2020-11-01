@@ -106,6 +106,73 @@ class QuestionView: UIView {
             textField.isHidden = true
             answerLabel.isHidden = true
             statementLabel.isHidden = true
+        case Struct.deferFomartCollection.defer_3.rawValue:
+            qestionTitleLabel.text = Struct.Answer.defer_3.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.deferAnswerText.defer_3.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
+        case Struct.genericsFuncCollection.generics_1.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsAnswerText.genercs_1.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
+        case Struct.genericsFuncCollection.generics_2.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsAnswerText.genercs_2.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
+        case Struct.genericsFuncCollection.generics_3.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsAnswerText.genercs_3.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
+        case Struct.genericsFuncCollection.generics_4.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsAnswerText.genercs_4.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
+        case Struct.genericsClassCollection.generics_1.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsSourceCode.generics_1.rawValue
+            questionTitleLabel2.backgroundColor = .systemGray6
+            textField.isHidden = true
+            answerLabel.text = Struct.genericsAnswerText.genercs_5.rawValue
+            statementLabel.isHidden = true
+        case Struct.genericsClassCollection.generics_2.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsSourceCode.generics_2.rawValue
+            questionTitleLabel2.backgroundColor = .systemGray6
+            textField.isHidden = true
+            answerLabel.text = Struct.genericsAnswerText.genercs_6.rawValue
+            statementLabel.isHidden = true
+        case Struct.genericsClassCollection.generics_3.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsSourceCode.generics_3.rawValue
+            questionTitleLabel2.backgroundColor = .systemGray6
+            textField.isHidden = true
+            answerLabel.text = Struct.genericsAnswerText.genercs_7.rawValue
+            statementLabel.isHidden = true
+        case Struct.genericsClassCollection.generics_4.rawValue:
+            qestionTitleLabel.text = Struct.Answer.generics_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.genericsSourceCode.generics_4.rawValue
+            questionTitleLabel2.backgroundColor = .systemGray6
+            textField.isHidden = true
+            answerLabel.text = Struct.genericsAnswerText.genercs_8.rawValue
+            statementLabel.isHidden = true
         default:
             return
         }

@@ -30,6 +30,10 @@ class SecondTableViewController: UIViewController {
             for index in Struct.deferFomartCollection.allCases {
                 secondArray.append(index.rawValue)
             }
+        case Struct.First.generics.rawValue:
+            for index in Struct.genericsFomartCollection.allCases {
+                secondArray.append(index.rawValue)
+            }
         default:
             return
         }
@@ -51,7 +55,7 @@ extension SecondTableViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch titleString {
-        case Struct.First.for_in_1.rawValue:
+        case Struct.First.for_in_1.rawValue, Struct.First.generics.rawValue:
             let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
             vc.titleString = secondArray[indexPath.row]

@@ -34,8 +34,7 @@ class QuestionViewController: UIViewController {
     let defalutButtonColor = UIColor.hex(string: "#76D6FF", alpha: 1)
     let hilightButtonColor = UIColor.hex(string: "#79B6DA", alpha: 1)
     let buttonCornerRadius = CGFloat(5)
-    var stringArray_1 = [String]()
-    var stringArray_2 = [String]()
+    let redLabelText = "選択肢の中から当てはまるものを選んでみよう！"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +54,25 @@ class QuestionViewController: UIViewController {
             formatLabel.text = Struct.Format.while_2.rawValue
         case Struct.deferFomartCollection.defer_1.rawValue, Struct.deferFomartCollection.defer_2.rawValue:
             formatTitleLabel.isHidden = true
-            largeRedLabel.text = "選択肢の中から当てはまるものを選んでみよう！"
+            largeRedLabel.text = redLabelText
             smallRedLabel.isHidden = true
             formatLabel.text = Struct.Format.defer_1.rawValue
+            buttonStackView.isHidden = false
+        case Struct.deferFomartCollection.defer_3.rawValue:
+            formatTitleLabel.isHidden = true
+            largeRedLabel.text = redLabelText
+            smallRedLabel.isHidden = true
+            formatLabel.text = Struct.Format.defer_3.rawValue
+            buttonStackView.isHidden = false
+        case Struct.genericsFuncCollection.generics_1.rawValue, Struct.genericsFuncCollection.generics_2.rawValue, Struct.genericsFuncCollection.generics_3.rawValue, Struct.genericsFuncCollection.generics_4.rawValue:
+            largeRedLabel.text = redLabelText
+            smallRedLabel.isHidden = true
+            formatLabel.text = Struct.Format.generics_1.rawValue
+            buttonStackView.isHidden = false
+        case Struct.genericsClassCollection.generics_1.rawValue, Struct.genericsClassCollection.generics_2.rawValue, Struct.genericsClassCollection.generics_3.rawValue, Struct.genericsClassCollection.generics_4.rawValue:
+            largeRedLabel.text = redLabelText
+            smallRedLabel.isHidden = true
+            formatLabel.text = Struct.Format.generics_2.rawValue
             buttonStackView.isHidden = false
         default:
             return
@@ -99,110 +114,87 @@ class QuestionViewController: UIViewController {
     
     @IBAction func pushOnSubmitButton(_ sender: Any) {
         
-        for index in Struct.arrayTitleString.allCases {
-            stringArray_1.append(index.rawValue)
-        }
-        
-        for index in Struct.arrayAnswerString.allCases {
-            stringArray_2.append(index.rawValue)
-        }
-        
-        for index in 0..<stringArray_1.count {
-            switch titleString {
-            case stringArray_1[index]:
-                if index < 10 {
-                    if questionView?.textField.text == stringArray_2[index] {
-                        HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-                    } else {
-                        HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-                    }
-                } else if index > 10 {
-                    if answerString == stringArray_2[index] {
-                        HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-                    } else {
-                        HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-                    }
-                }
-            default:
-                return
+        switch titleString {
+        case Struct.forCollection_1.for_in_1.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_1.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             }
+        case Struct.forCollection_1.for_in_2.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_2.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.forCollection_2.for_in_3.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_3.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.forCollection_2.for_in_4.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_4.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.forCollection_2.for_in_5.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_5.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.forCollection_2.for_in_6.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_6.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.forCollection_2.for_in_7.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_7.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.forCollection_1.for_in_4.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.for_in_8.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.whileCollection.while_1.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.while_1.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.whileCollection.while_2.rawValue:
+            if questionView?.textField.text == Struct.AnswerText.while_2.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.deferFomartCollection.defer_1.rawValue, Struct.genericsFuncCollection.generics_1.rawValue, Struct.genericsFuncCollection.generics_4.rawValue, Struct.genericsClassCollection.generics_3.rawValue:
+            if answerString == Struct.AnswerText.A.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.deferFomartCollection.defer_2.rawValue, Struct.genericsFuncCollection.generics_2.rawValue,Struct.genericsClassCollection.generics_1.rawValue, Struct.genericsClassCollection.generics_4.rawValue:
+            if answerString == Struct.AnswerText.B.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        case Struct.deferFomartCollection.defer_3.rawValue, Struct.genericsFuncCollection.generics_3.rawValue, Struct.genericsClassCollection.generics_2.rawValue:
+            if answerString == Struct.AnswerText.C.rawValue {
+                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            } else {
+                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
+            }
+        default:
+            return
         }
-        
-//        switch titleString {
-//        case Struct.forCollection_1.for_in_1.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_1.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_1.for_in_2.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_2.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_2.for_in_3.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_3.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_2.for_in_4.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_4.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_2.for_in_5.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_5.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_2.for_in_6.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_6.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_2.for_in_7.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_7.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.forCollection_1.for_in_4.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.for_in_8.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.whileCollection.while_1.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.while_1.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.whileCollection.while_2.rawValue:
-//            if questionView?.textField.text == Struct.AnswerText.while_2.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.deferFomartCollection.defer_1.rawValue:
-//            if answerString == Struct.AnswerText.defer_1.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        case Struct.deferFomartCollection.defer_2.rawValue:
-//            if answerString == Struct.AnswerText.defer_2.rawValue {
-//                HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            } else {
-//                HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
-//            }
-//        default:
-//            return
-//        }
     }
 }

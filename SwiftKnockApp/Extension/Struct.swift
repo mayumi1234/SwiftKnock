@@ -10,15 +10,37 @@ import UIKit
 
 let cellId = "cellId"
 
+extension UIColor {
+    class func hex ( string : String, alpha : CGFloat) -> UIColor {
+        let string_ = string.replacingOccurrences(of: "#", with: "")
+        let scanner = Scanner(string: string_ as String)
+        var color: UInt32 = 0
+        if scanner.scanHexInt32(&color) {
+            let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+            let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+            let b = CGFloat(color & 0x0000FF) / 255.0
+            return UIColor(red:r,green:g,blue:b,alpha:alpha)
+        } else {
+            return UIColor.white;
+        }
+    }
+}
+
 class Struct: NSObject {
     
     enum First: String, CaseIterable {
         case for_in_1 = "繰り返し処理（for-in、while、repeat-while）"
+        case defer_sentence = "defer文"
     }
     
     enum repeatFomartCollection: String, CaseIterable {
         case for_in_1 = "for-in文"
         case for_in_2 = "while文"
+    }
+    
+    enum deferFomartCollection: String, CaseIterable {
+        case defer_1 = "単体のdefer文"
+        case defer_2 = "複数のdefer文"
     }
     
     enum forCollection_1: String, CaseIterable {
@@ -72,6 +94,10 @@ class Struct: NSObject {
                           // ステートメント
                         } while (ループ条件)
                         """
+        case defer_1 = """
+                        スコープを抜ける際に実行したい処理を定義する。
+                        複数のdefer文を記述した場合は逆順で実行される。
+                       """
     }
 
     enum QestionTitle: String {
@@ -225,6 +251,55 @@ class Struct: NSObject {
                             count += 1
                         } while(count < 1)
                         """
+        case defer_1 = """
+                        func deferTest() {
+
+                        // ここに入る回答を選んでください
+
+                            print("Hello, World.")
+                        }
+                        deferTest()
+
+                        // 【結果】
+                        // Hello, World.
+                        // defer文実行
+                       """
+        case defer_2 = """
+                        func deferTest() {
+
+                            defer {
+                                print("defer文実行_1")
+                            }
+
+                            defer {
+                                print("defer文実行_2")
+                            }
+
+                            // ここに入る回答を選んでください。
+
+                            print("Hello, World.")
+                        }
+                        deferTest()
+
+                        // 【結果】
+                        // Hello, World.
+                        // defer文実行_3
+                        // defer文実行_2
+                        // defer文実行_1
+                       """
+    }
+    
+    enum deferAnswerText: String {
+        case defer_1 = """
+                        (A) defer { print("defer文実行") }
+                        (B) print { print("defer文実行") }
+                        (C) switch { print("defer文実行") }
+                        """
+        case defer_2 = """
+                        (A) defer { print("defer文実行_1") }
+                        (B) defer { print("defer文実行_3") }
+                        (C) defer { print("defer文実行_2") }
+                       """
     }
 
     enum AnswerText: String {
@@ -238,6 +313,13 @@ class Struct: NSObject {
         case for_in_8 = "for num in stride(from: 10, to: 50, by: 3)"
         case while_1 = "while count < 5"
         case while_2 = "repeat"
+        case defer_1 = "A"
+        case defer_2 = "B"
+    }
+    
+    enum correctOrNotcorrect: String {
+        case correct = "正解！"
+        case not_correct = "不正解！"
     }
 
 }

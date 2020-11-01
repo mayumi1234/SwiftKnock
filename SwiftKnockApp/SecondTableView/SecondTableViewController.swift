@@ -21,8 +21,17 @@ class SecondTableViewController: UIViewController {
         
         self.navigationItem.title = titleString
         
-        for index in Struct.repeatFomartCollection.allCases {
-            secondArray.append(index.rawValue)
+        switch titleString {
+        case "繰り返し処理（for-in、while、repeat-while）":
+            for index in Struct.repeatFomartCollection.allCases {
+                secondArray.append(index.rawValue)
+            }
+        case "defer文":
+            for index in Struct.deferFomartCollection.allCases {
+                secondArray.append(index.rawValue)
+            }
+        default:
+            return
         }
     }
 
@@ -41,18 +50,20 @@ extension SecondTableViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 { //　for文
+        switch titleString {
+        case "繰り返し処理（for-in、while、repeat-while）":
             let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
             vc.titleString = secondArray[indexPath.row]
             vc.index = indexPath.row
             navigationController?.pushViewController(vc, animated: true)
-        } else if indexPath.row == 1 { // while文
-            let storyboard = UIStoryboard.init(name: "ThirdTableView", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ThirdTableViewController") as! ThirdTableViewController
+        case "defer文":
+            let storyboard = UIStoryboard.init(name: "QuestionView", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
             vc.titleString = secondArray[indexPath.row]
-            vc.index = indexPath.row
             navigationController?.pushViewController(vc, animated: true)
+        default:
+            return
         }
     }
 }

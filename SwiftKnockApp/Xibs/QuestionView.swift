@@ -92,6 +92,20 @@ class QuestionView: UIView {
             questionTitleLabel2.text = Struct.ArrayState.while_2.rawValue
             answerLabel.text = Struct.Answer.while_2.rawValue
             statementLabel.isHidden = true
+        case "単体のdefer文":
+            qestionTitleLabel.text = Struct.Answer.defer_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.deferAnswerText.defer_1.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
+        case Struct.deferFomartCollection.defer_2.rawValue:
+            qestionTitleLabel.text = Struct.Answer.defer_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.text = Struct.deferAnswerText.defer_2.rawValue
+            textField.isHidden = true
+            answerLabel.isHidden = true
+            statementLabel.isHidden = true
         default:
             return
         }

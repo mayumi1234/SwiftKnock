@@ -28,26 +28,51 @@ extension UIColor {
 
 class Struct: NSObject {
     
+    // FirstTable
     enum First: String, CaseIterable {
         case for_in_1 = "繰り返し処理（for-in、while、repeat-while）"
         case defer_sentence = "defer文"
         case generics = "ジェネリクス（関数、クラス）"
+        case closure = "クロージャ"
     }
     
+    // SecondTable
+    // 繰り返し処理（for-in、while、repeat-while）
     enum repeatFomartCollection: String, CaseIterable {
         case for_in_1 = "for-in文"
         case for_in_2 = "while文"
     }
     
+    // defer文
     enum deferFomartCollection: String, CaseIterable {
         case defer_1 = "単体のdefer文"
         case defer_2 = "複数のdefer文"
         case defer_3 = "注意点"
     }
     
+    // ジェネリクス（関数、クラス）
     enum genericsFomartCollection: String, CaseIterable {
         case generics_1 = "ジェネリック関数"
         case generics_2 = "ジェネリッククラス"
+    }
+    
+    // クロージャ
+    enum closureFomartCollection: String, CaseIterable {
+        case closure_1 = "基本的な使い方"
+        case closure_2 = "シンタックスシュガー"
+    }
+    
+    // ThirdTable
+    enum forCollection_1: String, CaseIterable {
+        case for_in_1 = "for-in レンジ（終了値を含まない）"
+        case for_in_2 = "for-in レンジ（終了値を含む）"
+        case for_in_3 = "for-in コレクション"
+        case for_in_4 = "for-in stride"
+    }
+    
+    enum whileCollection: String, CaseIterable {
+        case while_1 = "while"
+        case while_2 = "while_repeat"
     }
     
     enum genericsFuncCollection: String, CaseIterable {
@@ -64,18 +89,23 @@ class Struct: NSObject {
         case generics_4 = "Boolean(ジェネリッククラス)"
     }
     
-    enum forCollection_1: String, CaseIterable {
-        case for_in_1 = "for-in レンジ（終了値を含まない）"
-        case for_in_2 = "for-in レンジ（終了値を含む）"
-        case for_in_3 = "for-in コレクション"
-        case for_in_4 = "for-in stride"
+    enum closureBasicCollection: String, CaseIterable {
+        case closure_1 = "引数と戻り値のないクロージャ"
+        case closure_2 = "引数と戻り値のないクロージャ2"
+        case closure_3 = "引数と戻り値のないクロージャ3"
+        case closure_4 = "引数あり、戻り値なしのクロージャ"
+        case closure_5 = "引数なし、戻り値ありのクロージャ"
+        case closure_6 = "引数あり、戻り値ありのクロージャ"
     }
     
-    enum whileCollection: String, CaseIterable {
-        case while_1 = "while"
-        case while_2 = "while_repeat"
+    enum closureSytaxCollection: String, CaseIterable {
+        case closure_1 = "処理が単文の場合はreturnの省略が可"
+        case closure_2 = "処理が単文の場合は戻り値の型の省略が可"
+        case closure_3 = "型が分かっている場合は省略が可"
+        case closure_4 = "引数名にこだわりがなければ引数名の省略が可"
     }
     
+    // FourthTable
     enum forCollection_2: String, CaseIterable {
         case for_in_3 = "コレクションから値を取り出す"
         case for_in_4 = "全ての要素を取り出す"
@@ -130,6 +160,11 @@ class Struct: NSObject {
         case generics_2 = """
                           class クラス名<T> {
                             // 処理
+                          }
+                          """
+        case closure_1 = """
+                          { (引数名:引数の型) -> 戻り値の型 in
+                             処理
                           }
                           """
     }
@@ -388,6 +423,88 @@ class Struct: NSObject {
                           """
     }
     
+    enum closureBasicSourceCode: String {
+        case closure_1 = """
+                            // 引数と戻り値のないクロージャ
+                            let closure = { () ->
+                            // ここに入る回答を選んでください。
+                            }
+                            // クロージャ実行
+                            closure()
+                         """
+        case closure_2 = """
+                            // 戻り値がVoidであれば、以下のようにも書ける
+                            let closure = { () -> () in
+                            // ここに入る回答を選んでください。
+                            }
+                            closure()
+                         """
+        case closure_3 = """
+                            // クロージャーは引数と戻り値の型は推論が効くため、以下のような省略が可能
+                            let closure = {
+                            // ここに入る回答を選んでください。
+                            }
+                            closure()
+                         """
+        case closure_4 = """
+                         // 引数あり、戻り値なしのクロージャ
+                         let closure = {
+                            // ここに入る回答を選んでください。
+                            }
+                         closure(1, 2)
+                         """
+        case closure_5 = """
+                            // 引数なし、戻り値ありのクロージャ
+                            let closure = {
+                            // ここに入る回答を選んでください。
+                            }
+                            closure()
+                         """
+        case closure_6 = """
+                            // 引数あり、戻り値ありのクロージャ
+                            let closure = {
+                            // ここに入る回答を選んでください。
+                            }
+                            closure(1, 2)
+                         """
+    }
+    
+    enum closureSyntaxSourceCode: String {
+        case closure_1 = """
+                            // 省略なしの場合
+                            // let closure = { (num1: Int, num2: Int) -> Int in return num1 + num2 }
+                            let closure = { (num1: Int, num2: Int) -> Int in num1 + num2 }
+                            // クロージャ実行
+                            print(closure(5, 10)) // 結果: ここに入る回答を選んでください。
+                         """
+        case closure_2 = """
+                            // 省略なしの場合
+                            // let closure = { (num1: Int, num2: Int) -> Int in return num1 + num2 }
+                            let closure = { (num1: Int, num2: Int) in num1 + num2 }
+                            // クロージャ実行
+                            print(closure(5, 10)) // 結果: ここに入る回答を選んでください。
+                         """
+        case closure_3 = """
+                            // 変数宣言
+                            let closure: (Int, Int) -> Int
+                            // 変数にクロージャを代入
+                            closure = { (num1, num2) in num1 + num2 }
+                            // クロージャ実行
+                            print(closure(5, 10)) // 結果: ここに入る回答を選んでください。
+                         """
+        case closure_4 = """
+                            // 変数宣言
+                            let closure: (Int, Int) -> Int
+                            // 変数にクロージャを代入
+                            // クロージャは自動的に名前が付けられる
+                            // 第1引数は$0、第2引数は$1となる
+                            // これを使用すると、引数の定義は不要であり、またinも不要となる
+                            closure = { $0 + $1 }
+                            // クロージャ実行
+                            print(closure(5, 10)) // 結果: ここに入る回答を選んでください。
+                         """
+    }
+    
     enum deferAnswerText: String {
         case defer_1 = """
                         (A) defer { print("defer文実行") }
@@ -450,6 +567,62 @@ class Struct: NSObject {
                          (C) let resultBoolean = Test(data: 1.0)
                          """
         
+    }
+    
+    enum closureBasicAnswerText: String {
+        case closure_1 = """
+                            (A) Void in print("クロージャテスト")
+                            (B) let resultInt = Test(data: 10)
+                            (C) defer { print("defer文実行_1") }
+                        """
+        case closure_2 = """
+                            (A) defer { print("defer文実行_1") }
+                            (B) print("クロージャテスト")
+                            (C) let resultInt = Test(data: 10)
+                         """
+        case closure_3 = """
+                            (A) let resultInt = Test(data: 10)
+                            (B) defer { print("defer文実行_1") }
+                            (C) print("クロージャテスト")
+                         """
+        case closure_4 = """
+                            (A) (num1: Int, num2: Int) -> Void in print(num1 + num2)
+                            (B) print("クロージャテスト")
+                            (C) Void in print("クロージャテスト")
+                        """
+        case closure_5 = """
+                            (A) print("クロージャテスト")
+                            (B) () -> Int in return 100
+                            (C) (num1: Int, num2: Int) -> Void in print(num1 + num2)
+                        """
+        case closure_6 = """
+                            (A) () -> Int in return 100
+                            (B) (num1: Int, num2: Int) -> Void in print(num1 + num2)
+                            (C) (num1: Int, num2: Int) -> Int in return num1 + num2
+                         """
+    }
+    
+    enum closureSytaxAnswerText: String {
+        case closure_1 = """
+                            (A) 15
+                            (B) 10
+                            (C) 5
+                         """
+        case closure_2 = """
+                            (A) 10
+                            (B) 15
+                            (C) 5
+                         """
+        case closure_3 = """
+                            (A) 5
+                            (B) 10
+                            (C) 15
+                         """
+        case closure_4 = """
+                            (A) 15
+                            (B) 3
+                            (C) 5
+                         """
     }
 
     enum AnswerText: String {

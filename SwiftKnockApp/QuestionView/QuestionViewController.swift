@@ -27,6 +27,9 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var selectButtonA: UIButton!
     @IBOutlet weak var selectButtonB: UIButton!
     @IBOutlet weak var selectButtonC: UIButton!
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var scrollViewInView: UIView!
+    @IBOutlet weak var srollView: UIScrollView!
     
     var titleString: String?
     var answerString: String?
@@ -39,6 +42,25 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
+        patternformatFunc()
+    }
+    
+    private func setup() {
+        self.navigationItem.title = titleString
+        submitButton.layer.cornerRadius = buttonCornerRadius
+        selectButtonA.layer.cornerRadius = buttonCornerRadius
+        selectButtonB.layer.cornerRadius = buttonCornerRadius
+        selectButtonC.layer.cornerRadius = buttonCornerRadius
+        selectButtonA.backgroundColor = defalutButtonColor
+        selectButtonB.backgroundColor = defalutButtonColor
+        selectButtonC.backgroundColor = defalutButtonColor
+        selectButtonA.setTitleColor(.white, for: .normal)
+        selectButtonB.setTitleColor(.white, for: .normal)
+        selectButtonC.setTitleColor(.white, for: .normal)
+    }
+    
+    private func patternformatFunc() {
         switch titleString {
         case Struct.forCollection_1.for_in_1.rawValue:
             formatLabel.text = Struct.Format.for_in_1.rawValue
@@ -74,21 +96,19 @@ class QuestionViewController: UIViewController {
             smallRedLabel.isHidden = true
             formatLabel.text = Struct.Format.generics_2.rawValue
             buttonStackView.isHidden = false
+        case Struct.closureBasicCollection.closure_1.rawValue, Struct.closureBasicCollection.closure_2.rawValue, Struct.closureBasicCollection.closure_3.rawValue, Struct.closureBasicCollection.closure_4.rawValue, Struct.closureBasicCollection.closure_5.rawValue, Struct.closureBasicCollection.closure_6.rawValue:
+            largeRedLabel.text = redLabelText
+            smallRedLabel.isHidden = true
+            formatLabel.text = Struct.Format.closure_1.rawValue
+            buttonStackView.isHidden = false
+        case Struct.closureSytaxCollection.closure_1.rawValue, Struct.closureSytaxCollection.closure_2.rawValue, Struct.closureSytaxCollection.closure_3.rawValue, Struct.closureSytaxCollection.closure_4.rawValue:
+            largeRedLabel.text = redLabelText
+            smallRedLabel.isHidden = true
+            formatLabel.text = Struct.Format.closure_1.rawValue
+            buttonStackView.isHidden = false
         default:
             return
         }
-        
-        self.navigationItem.title = titleString
-        submitButton.layer.cornerRadius = buttonCornerRadius
-        selectButtonA.layer.cornerRadius = buttonCornerRadius
-        selectButtonB.layer.cornerRadius = buttonCornerRadius
-        selectButtonC.layer.cornerRadius = buttonCornerRadius
-        selectButtonA.backgroundColor = defalutButtonColor
-        selectButtonB.backgroundColor = defalutButtonColor
-        selectButtonC.backgroundColor = defalutButtonColor
-        selectButtonA.setTitleColor(.white, for: .normal)
-        selectButtonB.setTitleColor(.white, for: .normal)
-        selectButtonC.setTitleColor(.white, for: .normal)
     }
     
     @IBAction func pushOnAButton(_ sender: Any) {
@@ -175,19 +195,19 @@ class QuestionViewController: UIViewController {
             } else {
                 HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             }
-        case Struct.deferFomartCollection.defer_1.rawValue, Struct.genericsFuncCollection.generics_1.rawValue, Struct.genericsFuncCollection.generics_4.rawValue, Struct.genericsClassCollection.generics_3.rawValue:
+        case Struct.deferFomartCollection.defer_1.rawValue, Struct.genericsFuncCollection.generics_1.rawValue, Struct.genericsFuncCollection.generics_4.rawValue, Struct.genericsClassCollection.generics_3.rawValue, Struct.closureBasicCollection.closure_1.rawValue, Struct.closureBasicCollection.closure_4.rawValue, Struct.closureSytaxCollection.closure_1.rawValue, Struct.closureSytaxCollection.closure_4.rawValue:
             if answerString == Struct.AnswerText.A.rawValue {
                 HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             } else {
                 HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             }
-        case Struct.deferFomartCollection.defer_2.rawValue, Struct.genericsFuncCollection.generics_2.rawValue,Struct.genericsClassCollection.generics_1.rawValue, Struct.genericsClassCollection.generics_4.rawValue:
+        case Struct.deferFomartCollection.defer_2.rawValue, Struct.genericsFuncCollection.generics_2.rawValue,Struct.genericsClassCollection.generics_1.rawValue, Struct.genericsClassCollection.generics_4.rawValue, Struct.closureBasicCollection.closure_2.rawValue, Struct.closureBasicCollection.closure_5.rawValue, Struct.closureSytaxCollection.closure_2.rawValue:
             if answerString == Struct.AnswerText.B.rawValue {
                 HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             } else {
                 HUD.flash(.labeledError(title: Struct.correctOrNotcorrect.not_correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             }
-        case Struct.deferFomartCollection.defer_3.rawValue, Struct.genericsFuncCollection.generics_3.rawValue, Struct.genericsClassCollection.generics_2.rawValue:
+        case Struct.deferFomartCollection.defer_3.rawValue, Struct.genericsFuncCollection.generics_3.rawValue, Struct.genericsClassCollection.generics_2.rawValue, Struct.closureBasicCollection.closure_3.rawValue, Struct.closureBasicCollection.closure_6.rawValue, Struct.closureSytaxCollection.closure_3.rawValue:
             if answerString == Struct.AnswerText.C.rawValue {
                 HUD.flash(.labeledSuccess(title: Struct.correctOrNotcorrect.correct.rawValue, subtitle: ""), delay: TimeInterval(delayTime))
             } else {

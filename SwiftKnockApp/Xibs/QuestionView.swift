@@ -173,6 +173,76 @@ class QuestionView: UIView {
             textField.isHidden = true
             answerLabel.text = Struct.genericsAnswerText.genercs_8.rawValue
             statementLabel.isHidden = true
+        case Struct.closureBasicCollection.closure_1.rawValue:
+            qestionTitleLabel.text = Struct.closureBasicSourceCode.closure_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureBasicAnswerText.closure_1.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureBasicCollection.closure_2.rawValue:
+            qestionTitleLabel.text = Struct.closureBasicSourceCode.closure_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureBasicAnswerText.closure_2.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureBasicCollection.closure_3.rawValue:
+            qestionTitleLabel.text = Struct.closureBasicSourceCode.closure_3.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureBasicAnswerText.closure_3.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureBasicCollection.closure_4.rawValue:
+            qestionTitleLabel.text = Struct.closureBasicSourceCode.closure_4.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureBasicAnswerText.closure_4.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureBasicCollection.closure_5.rawValue:
+            qestionTitleLabel.text = Struct.closureBasicSourceCode.closure_5.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureBasicAnswerText.closure_5.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureBasicCollection.closure_6.rawValue:
+            qestionTitleLabel.text = Struct.closureBasicSourceCode.closure_6.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureBasicAnswerText.closure_6.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureSytaxCollection.closure_1.rawValue:
+            qestionTitleLabel.text = Struct.closureSyntaxSourceCode.closure_1.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureSytaxAnswerText.closure_1.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureSytaxCollection.closure_2.rawValue:
+            qestionTitleLabel.text = Struct.closureSyntaxSourceCode.closure_2.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureSytaxAnswerText.closure_2.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureSytaxCollection.closure_3.rawValue:
+            qestionTitleLabel.text = Struct.closureSyntaxSourceCode.closure_3.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureSytaxAnswerText.closure_3.rawValue
+            statementLabel.isHidden = true
+        case Struct.closureSytaxCollection.closure_4.rawValue:
+            qestionTitleLabel.text = Struct.closureSyntaxSourceCode.closure_4.rawValue
+            qestionTitleLabel.backgroundColor = .systemGray6
+            questionTitleLabel2.isHidden = true
+            textField.isHidden = true
+            answerLabel.text = Struct.closureSytaxAnswerText.closure_4.rawValue
+            statementLabel.isHidden = true
         default:
             return
         }

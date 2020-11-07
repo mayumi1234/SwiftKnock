@@ -40,6 +40,14 @@ class ThirdTableViewController: UIViewController {
             for index in Struct.genericsClassCollection.allCases {
                 thirdArray.append(index.rawValue)
             }
+        case Struct.closureFomartCollection.closure_1.rawValue:
+            for index in Struct.closureBasicCollection.allCases {
+                thirdArray.append(index.rawValue)
+            }
+        case Struct.closureFomartCollection.closure_2.rawValue:
+            for index in Struct.closureSytaxCollection.allCases {
+                thirdArray.append(index.rawValue)
+            }
         default:
             return
         }
@@ -81,9 +89,9 @@ extension ThirdTableViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 segueQuestionView()
             }
-        case Struct.repeatFomartCollection.for_in_2.rawValue:
-            segueQuestionView()
-        case Struct.genericsFomartCollection.generics_1.rawValue, Struct.genericsFomartCollection.generics_2.rawValue:
+        case Struct.repeatFomartCollection.for_in_2.rawValue, Struct.genericsFomartCollection.generics_1.rawValue, Struct.genericsFomartCollection.generics_2.rawValue,
+             Struct.closureFomartCollection.closure_1.rawValue,
+             Struct.closureFomartCollection.closure_2.rawValue:
             segueQuestionView()
         default:
             return
